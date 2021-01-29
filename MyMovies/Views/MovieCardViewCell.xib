@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="KGk-i7-Jjw" customClass="MovieCardViewCell" customModule="MyMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="528" height="396"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="528" height="396"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lsu-Tv-Zaa">
+                        <rect key="frame" x="20" y="16" width="488" height="364"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dl5-hD-Pme">
+                                <rect key="frame" x="0.0" y="0.0" width="488" height="220"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rays" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pdg-Ly-r9G">
+                                        <rect key="frame" x="10" y="9.5" width="468" height="200.5"/>
+                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="wfK-o4-c0e"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pdg-Ly-r9G" firstAttribute="leading" secondItem="dl5-hD-Pme" secondAttribute="leading" constant="10" id="Brn-0S-RYD"/>
+                                    <constraint firstItem="pdg-Ly-r9G" firstAttribute="centerY" secondItem="dl5-hD-Pme" secondAttribute="centerY" id="QHX-H0-HhB"/>
+                                    <constraint firstAttribute="trailing" secondItem="pdg-Ly-r9G" secondAttribute="trailing" constant="10" id="QeR-fE-N34"/>
+                                    <constraint firstItem="pdg-Ly-r9G" firstAttribute="top" secondItem="dl5-hD-Pme" secondAttribute="top" constant="10" id="lKo-iY-eeJ"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dOg-JN-wWw">
+                                <rect key="frame" x="10" y="225" width="200" height="139"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Td9-FC-Y65">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkZ-MG-M6N">
+                                                <rect key="frame" x="0.0" y="5" width="100" height="19"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="RTd-5X-gBk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avengers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCY-Ma-gqg">
+                                                <rect key="frame" x="100" y="5" width="100" height="19"/>
+                                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="TkZ-MG-M6N" firstAttribute="baseline" secondItem="mCY-Ma-gqg" secondAttribute="baseline" id="6a6-5B-md5"/>
+                                            <constraint firstItem="TkZ-MG-M6N" firstAttribute="top" secondItem="Td9-FC-Y65" secondAttribute="top" constant="5" id="7WA-cq-NWH"/>
+                                            <constraint firstItem="TkZ-MG-M6N" firstAttribute="baseline" secondItem="mCY-Ma-gqg" secondAttribute="firstBaseline" id="dRl-gQ-F3U"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnJ-eK-9Dj">
+                                        <rect key="frame" x="0.0" y="34" width="200" height="17.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Rating: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnD-aQ-7ZW">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="17.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="jjQ-pd-BiC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXn-1T-Fnf">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="17"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rnD-aQ-7ZW" firstAttribute="baseline" secondItem="cXn-1T-Fnf" secondAttribute="baseline" id="lNP-n9-GcL"/>
+                                            <constraint firstItem="rnD-aQ-7ZW" firstAttribute="baseline" secondItem="cXn-1T-Fnf" secondAttribute="firstBaseline" id="vyh-Rw-1Di"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ER-Ac-Vb8">
+                                        <rect key="frame" x="0.0" y="61.5" width="200" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Release: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-Yl-NC6">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="YoS-ZR-A7U"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYj-ic-SYY">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="18"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="exb-wt-8G5">
+                                        <rect key="frame" x="0.0" y="89.5" width="200" height="49.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Overview: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Srt-6F-KfU">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="br3-AY-69i"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nt-VB-Ovo">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="39.5"/>
+                                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="4Nt-VB-Ovo" secondAttribute="bottom" constant="10" id="uPU-zm-d0c"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Td9-FC-Y65" firstAttribute="top" secondItem="dOg-JN-wWw" secondAttribute="top" id="Uxb-Ze-YQS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="Color2"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dOg-JN-wWw" secondAttribute="bottom" id="O4M-24-8N4"/>
+                            <constraint firstItem="dOg-JN-wWw" firstAttribute="leading" secondItem="lsu-Tv-Zaa" secondAttribute="leading" constant="10" id="SqQ-rN-eI1"/>
+                            <constraint firstAttribute="trailing" secondItem="dOg-JN-wWw" secondAttribute="trailing" constant="10" id="bZ1-By-pWz"/>
+                            <constraint firstItem="dOg-JN-wWw" firstAttribute="top" secondItem="dl5-hD-Pme" secondAttribute="bottom" constant="5" id="pNa-2B-Jlw"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="lsu-Tv-Zaa" secondAttribute="trailing" id="Dqk-Hp-E53"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="lsu-Tv-Zaa" secondAttribute="bottom" constant="5" id="XiJ-dg-dzc"/>
+                    <constraint firstItem="lsu-Tv-Zaa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="hZZ-gX-ogm"/>
+                    <constraint firstItem="lsu-Tv-Zaa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="k8q-Hh-DBW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="Color5"/>
+            <connections>
+                <outlet property="cardView" destination="lsu-Tv-Zaa" id="o6p-lD-FEM"/>
+                <outlet property="overviewLabel" destination="4Nt-VB-Ovo" id="lcA-1f-Ebh"/>
+                <outlet property="posterImage" destination="pdg-Ly-r9G" id="6P1-gc-8fM"/>
+                <outlet property="ratingLabel" destination="cXn-1T-Fnf" id="Rja-Ia-0b2"/>
+                <outlet property="releaseLabel" destination="HYj-ic-SYY" id="cQ5-1f-wRw"/>
+                <outlet property="titleLabel" destination="mCY-Ma-gqg" id="PWU-dM-Qfy"/>
+            </connections>
+            <point key="canvasLocation" x="295.6521739130435" y="179.46428571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="rays" catalog="system" width="128" height="122"/>
+        <namedColor name="Color2">
+            <color red="0.3327610493" green="0.76629674430000005" blue="0.74349993469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color5">
+            <color red="0.0" green="0.35334403050000002" blue="0.45588595030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
