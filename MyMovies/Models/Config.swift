@@ -15,6 +15,7 @@ struct Config {
     static let movieImageUrl: String = "https://image.tmdb.org/t/p/w500"
     
     static let loginToHome: String = "loginToHome"
+    static let homeToSearch: String = "homeToSearch"
     
     static let cellNibName = "MovieCardViewCell"
     static let movieCellName: String = "movieCell"

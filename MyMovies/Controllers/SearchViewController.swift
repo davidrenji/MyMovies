@@ -8,39 +8,32 @@
 import UIKit
 import Kingfisher
 
-class HomeViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var moviesTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     private let apiService:ApiService = ApiService()
     private var loadingAnimation: Animation!
     private var movies: [Movie] = []
+    public var searchQuery: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.hidesBackButton = true
+        navigationItem.title = searchQuery
         
-        searchBar.delegate = self
-
+        moviesTableView.rowHeight = moviesTableView.bounds.height
         moviesTableView.dataSource = self
         moviesTableView.register(UINib(nibName: Config.cellNibName, bundle: nil), forCellReuseIdentifier: Config.movieCellName)
-        moviesTableView.rowHeight = moviesTableView.bounds.height
         
         loadingAnimation = Animation(parent: mainView, name: Config.loadingAnimationName, width: 100, height: 100, loop: true, color: .white)
-        getPopularMovies()
+        getMovies()
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
-    
-    func getPopularMovies() {
+    func getMovies() {
         loadingAnimation.show()
-        apiService.getPopularMovies(){ result in
-            print("result: \(result)")
+        apiService.searchMovies(query: searchQuery) { result in
             self.loadingAnimation.hide()
             if result.result {
                 print("got movies")
@@ -55,22 +48,13 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Config.homeToSearch {
-            if let destinationVC = segue.destination as? SearchViewController {
-                destinationVC.searchQuery = searchBar.text!
-                searchBar.text = ""
-                self.view.endEditing(true)
-            }
-        }
-    }
         
 
 }
 
 //MARK: - UITableViewDataSource extension -
-extension HomeViewController: UITableViewDataSource {
+
+extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(movies.count)
         return movies.count
@@ -96,13 +80,8 @@ extension HomeViewController: UITableViewDataSource {
             cell.ratingLabel.text = String(rating)
         }
         
+        cell.cellHeight = Int(moviesTableView.bounds.height)
+        
         return cell
-    }    
-}
-//MARK: - UISearchBarDelegate extension -
-extension HomeViewController: UISearchBarDelegate {
-    //When the search button is pressed, we go to the search view controller
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        performSegue(withIdentifier: Config.homeToSearch, sender: self)
     }
 }

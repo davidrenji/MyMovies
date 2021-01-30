@@ -43,12 +43,25 @@ struct ApiService {
     }
     
     func getPopularMovies(onComplete: @escaping (ApiResult)->Void) -> Void {
+        let url: String = "movie/popular"
+        gethMovies(url: url, params: nil, onComplete: onComplete)
+    }
+    
+    func searchMovies(query: String, onComplete: @escaping (ApiResult)->Void) -> Void {
+        let url: String = "search/movie"
+        let params: [String: String] = ["query" : query]
+        gethMovies(url: url, params: params, onComplete: onComplete)
+    }
+    
+    private func gethMovies(url: String, params: [String: String]?, onComplete: @escaping (ApiResult)->Void) -> Void {
+        let url: String = Config.moviesApiUrl + url
+        var _params: [String: String] = [:]
+        if params != nil {
+            _params = params!
+        }
+        _params.updateValue(Config.apiKey, forKey: "api_key")
         
-        let url: String = Config.moviesApiUrl + "movie/popular"
-        let params: [String: String] = ["api_key" : Config.apiKey]
-        
-        
-        AF.request(url, method: .get, parameters: params)
+        AF.request(url, method: .get, parameters: _params)
             .validate(statusCode: 200..<300)
             .response { response in
             debugPrint(response)
@@ -69,7 +82,8 @@ struct ApiService {
                                 movie.title = moviewRaw["title"] as? String
                                 movie.description = moviewRaw["overview"] as? String
                                 movie.releaseDate = moviewRaw["release_date"] as? Date
-                                movie.poster = Config.movieImageUrl + (moviewRaw["backdrop_path"] as? String ?? "")
+                                movie.poster = Config.movieImageUrl + (moviewRaw["poster_path"] as? String ?? "")
+                                movie.backdrop = Config.movieImageUrl + (moviewRaw["backdrop_path"] as? String ?? "")
                                 movie.rating = moviewRaw["vote_average"] as? Double
                                 movies.append(movie)
                             }
@@ -77,7 +91,7 @@ struct ApiService {
                             apiResult.data = movies
                         case .failure(_):
                             apiResult.result = false
-                            apiResult.data = data["error"]
+                            apiResult.data = data["error"] ?? "Error"
                     }
                     
                     onComplete(apiResult)

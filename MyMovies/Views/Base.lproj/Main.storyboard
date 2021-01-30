@@ -152,7 +152,7 @@
             </objects>
             <point key="canvasLocation" x="1579.7101449275362" y="130.58035714285714"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Popular Movies-->
         <scene sceneID="xam-w6-ysw">
             <objects>
                 <viewController id="Zhg-Jd-hnl" customClass="HomeViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
@@ -160,8 +160,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q1C-6n-tP9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <searchBar contentMode="redraw" placeholder="Search movies..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQW-xd-bXj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <color key="backgroundColor" red="0.64987766739999997" green="0.0" blue="0.60316270589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.63924968950000005" blue="0.65176511849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" name="Color5"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
+                                        <color key="value" name="Color5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="searchField.backgroundColor">
+                                        <color key="value" name="Color1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q1C-6n-tP9">
+                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <color key="backgroundColor" name="Color5"/>
                             </tableView>
                         </subviews>
@@ -169,15 +184,20 @@
                         <color key="backgroundColor" name="Color5"/>
                         <constraints>
                             <constraint firstItem="2gC-ZX-GvI" firstAttribute="trailing" secondItem="Q1C-6n-tP9" secondAttribute="trailing" id="6oy-HA-N4a"/>
-                            <constraint firstItem="2gC-ZX-GvI" firstAttribute="bottom" secondItem="Q1C-6n-tP9" secondAttribute="bottom" id="IdC-qe-NOS"/>
+                            <constraint firstAttribute="bottom" secondItem="Q1C-6n-tP9" secondAttribute="bottom" id="IdC-qe-NOS"/>
+                            <constraint firstItem="fQW-xd-bXj" firstAttribute="top" secondItem="2gC-ZX-GvI" secondAttribute="top" id="Nen-QL-TaD"/>
+                            <constraint firstItem="fQW-xd-bXj" firstAttribute="trailing" secondItem="2gC-ZX-GvI" secondAttribute="trailing" id="ZZq-mg-9ZQ"/>
                             <constraint firstItem="Q1C-6n-tP9" firstAttribute="leading" secondItem="2gC-ZX-GvI" secondAttribute="leading" id="baV-jJ-G27"/>
-                            <constraint firstItem="Q1C-6n-tP9" firstAttribute="top" secondItem="2gC-ZX-GvI" secondAttribute="top" id="bb2-tP-ejU"/>
+                            <constraint firstItem="Q1C-6n-tP9" firstAttribute="top" secondItem="fQW-xd-bXj" secondAttribute="top" constant="56" id="bb2-tP-ejU"/>
+                            <constraint firstItem="fQW-xd-bXj" firstAttribute="leading" secondItem="2gC-ZX-GvI" secondAttribute="leading" id="hzA-m6-oWN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="z8V-5c-MCX"/>
+                    <navigationItem key="navigationItem" title="Popular Movies" id="z8V-5c-MCX"/>
                     <connections>
                         <outlet property="mainView" destination="CHM-qd-2on" id="eYb-G1-3SG"/>
                         <outlet property="moviesTableView" destination="Q1C-6n-tP9" id="ZeK-OU-0hs"/>
+                        <outlet property="searchBar" destination="fQW-xd-bXj" id="WO2-vR-KBz"/>
+                        <segue destination="pBX-Cd-zX7" kind="show" identifier="homeToSearch" id="UTg-QA-1VF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttg-PD-Ymg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -195,6 +215,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="Color5"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
@@ -210,11 +231,46 @@
             </objects>
             <point key="canvasLocation" x="669.56521739130437" y="130.58035714285714"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="el5-Oj-jcj">
+            <objects>
+                <viewController id="pBX-Cd-zX7" customClass="SearchViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gR0-yN-VQO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQd-4Q-wYv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" name="Color5"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hHr-aW-e61"/>
+                        <color key="backgroundColor" name="Color5"/>
+                        <constraints>
+                            <constraint firstItem="OQd-4Q-wYv" firstAttribute="leading" secondItem="hHr-aW-e61" secondAttribute="leading" id="NmD-4g-tIJ"/>
+                            <constraint firstItem="hHr-aW-e61" firstAttribute="trailing" secondItem="OQd-4Q-wYv" secondAttribute="trailing" id="U7J-7V-9Sd"/>
+                            <constraint firstAttribute="bottom" secondItem="OQd-4Q-wYv" secondAttribute="bottom" id="cK2-xV-mFE"/>
+                            <constraint firstItem="OQd-4Q-wYv" firstAttribute="top" secondItem="hHr-aW-e61" secondAttribute="top" id="gAI-TB-W4R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="b27-I6-T4d"/>
+                    <connections>
+                        <outlet property="mainView" destination="gR0-yN-VQO" id="XEc-n6-SQ6"/>
+                        <outlet property="moviesTableView" destination="OQd-4Q-wYv" id="fBE-qh-nHK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qy-9H-oCG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3259" y="138"/>
+        </scene>
     </scenes>
     <resources>
         <image name="key.fill" catalog="system" width="83" height="128"/>
         <image name="logo_movies" width="185.03999328613281" height="133.39999389648438"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="Color1">
+            <color red="0.46696513890000002" green="0.79113835099999996" blue="0.67260193820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Color5">
             <color red="0.0" green="0.35334403050000002" blue="0.45588595030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

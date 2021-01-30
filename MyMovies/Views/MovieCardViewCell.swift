@@ -9,19 +9,21 @@ import UIKit
 
 class MovieCardViewCell: UITableViewCell {
 
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var cardView: UIStackView!
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var releaseLabel: UILabel!
-    
     @IBOutlet weak var overviewLabel: UILabel!
+    
+    public var cellHeight: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

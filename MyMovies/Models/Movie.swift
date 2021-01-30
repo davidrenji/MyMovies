@@ -12,5 +12,6 @@ struct Movie {
     var releaseDate: Date?
     var description: String?
     var poster: String?
+    var backdrop: String?
     var rating: Double?
 }
