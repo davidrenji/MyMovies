@@ -31,7 +31,9 @@ class LoginViewController: UIViewController {
         formViewController.addRoundCorners(radius: 10)
         formViewController.addBoxShadow(opacity: 1, radius: 10, color: UIColor(named: "Color2"))
         loginButton.layer.cornerRadius = 10
-        loadingAnimation = Animation(parent: loadingContainerView, name: Config.loadingAnimationName, width: 50, height: 50, loop: true, color: nil)
+        loadingAnimation = Animation(parent: loadingContainerView, name: Config.loadingAnimationName, width: 50, height: 50, loop: true, color: .white)
+        
+        loadingContainerView.addRoundCorners(radius: 10, [.bottomLeft, .bottomRight])
         
         //If already logged in
         if let _ = UserDefaults.standard.string(forKey: "token"){

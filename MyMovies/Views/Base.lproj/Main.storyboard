@@ -6,7 +6,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,11 +45,12 @@
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="eve.holt@reqres.in" borderStyle="roundedRect" placeholder="myemail@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="su3-J5-SnD">
                                                         <rect key="frame" x="40" y="11.333333333333314" width="302" height="40"/>
+                                                        <color key="backgroundColor" name="Color1"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="0hk-bl-JgB"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.0" green="0.56251937149999998" blue="0.72115403410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                                        <color key="textColor" name="Color5"/>
+                                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                                     </textField>
                                                 </subviews>
@@ -66,12 +66,14 @@
                                                             <constraint firstAttribute="width" constant="30" id="dTs-pV-wXh"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fdas" borderStyle="roundedRect" placeholder="*********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPB-lN-cae">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" placeholder="*********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPB-lN-cae">
                                                         <rect key="frame" x="40" y="11" width="302" height="40"/>
+                                                        <color key="backgroundColor" name="Color1"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="gbC-b6-CCf"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                                        <color key="textColor" name="Color5"/>
+                                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
@@ -81,7 +83,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIj-LP-Sad">
                                                         <rect key="frame" x="0.0" y="6.3333333333333712" width="110" height="50"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.56251937149999998" blue="0.72115403410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="Color1"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="OGL-LX-EhF"/>
                                                             <constraint firstAttribute="width" constant="110" id="t9Z-dD-gZR"/>
@@ -97,23 +99,32 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uio-eD-u4s">
-                                                <rect key="frame" x="181" y="187.66666666666663" width="0.0" height="62.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="187.66666666666663" width="362" height="62.333333333333343"/>
                                                 <subviews>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7E-XJ-mER">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="20.333333333333332"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7E-XJ-mER">
+                                                        <rect key="frame" x="0.0" y="0.0" width="362" height="17.666666666666668"/>
+                                                        <color key="backgroundColor" red="0.75032202270000004" green="0.065860735399999995" blue="0.064680828800000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <size key="shadowOffset" width="0.5" height="0.5"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="G7E-XJ-mER" firstAttribute="leading" secondItem="uio-eD-u4s" secondAttribute="leading" id="jc6-3g-Wxt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="G7E-XJ-mER" secondAttribute="trailing" id="v75-PS-LD3"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.46696513890000002" green="0.79113835099999996" blue="0.67260193820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="Color4"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="VfG-hT-Yye" secondAttribute="trailing" constant="10" id="3Jf-CB-UkP"/>
                                             <constraint firstAttribute="trailing" secondItem="qNz-gi-DqS" secondAttribute="trailing" constant="10" id="M6j-fS-OQm"/>
                                             <constraint firstItem="qNz-gi-DqS" firstAttribute="leading" secondItem="8Nu-kf-5ek" secondAttribute="leading" constant="10" id="cRK-jO-eO5"/>
+                                            <constraint firstItem="uio-eD-u4s" firstAttribute="leading" secondItem="8Nu-kf-5ek" secondAttribute="leading" id="dIC-ZJ-o0b"/>
                                             <constraint firstAttribute="height" constant="250" id="gaG-2y-QYJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="uio-eD-u4s" secondAttribute="trailing" id="i1W-PV-VCD"/>
                                             <constraint firstItem="VfG-hT-Yye" firstAttribute="leading" secondItem="8Nu-kf-5ek" secondAttribute="leading" constant="10" id="txa-48-IZm"/>
                                         </constraints>
                                     </stackView>
@@ -175,9 +186,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q1C-6n-tP9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q1C-6n-tP9">
                                 <rect key="frame" x="0.0" y="144" width="414" height="752"/>
-                                <color key="backgroundColor" name="Color5"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2gC-ZX-GvI"/>
@@ -239,7 +249,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQd-4Q-wYv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQd-4Q-wYv">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" name="Color5"/>
                             </tableView>
@@ -271,11 +281,11 @@
         <namedColor name="Color1">
             <color red="0.46696513890000002" green="0.79113835099999996" blue="0.67260193820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Color4">
+            <color red="0.0" green="0.56251937149999998" blue="0.72115403410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Color5">
             <color red="0.0" green="0.35334403050000002" blue="0.45588595030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

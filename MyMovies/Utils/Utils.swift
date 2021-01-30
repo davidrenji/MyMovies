@@ -42,6 +42,13 @@ extension UIView {
         self.layer.cornerRadius = CGFloat(radius)
     }
     
+    func addRoundCorners(radius: CGFloat, _ corners:UIRectCorner) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+      }
+    
     func addBoxShadow(opacity: Float, radius: Int, color: UIColor?){
         
         var _color: UIColor = UIColor.white

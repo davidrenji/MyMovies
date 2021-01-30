@@ -10,14 +10,31 @@ import Alamofire
 
 struct ApiService {
     func login(email: String, password: String, onComplete: @escaping (ApiResult)->Void) -> Void {
+        var apiResult = ApiResult()
+        let _email = email.trimmingCharacters(in: .whitespacesAndNewlines)
+        let _password  = password.trimmingCharacters(in: .whitespacesAndNewlines)
+        var error = ""
+        if _email == "" {
+            error = "Please enter your email"
+        }
+        if _password == "" {
+            error += "\nPlease enter your password"
+        }
         
-        let params: [String: String] = ["email" : email, "password": password]
+        if error != "" {
+            apiResult.result = false
+            apiResult.data = error
+            return onComplete(apiResult)
+        }
+        
+        //Preparing request to api
+        let params: [String: String] = ["email" : _email, "password": _password]
         
         AF.request(Config.loginApiUrl, method: .post, parameters: params)
             .validate(statusCode: 200..<300)
             .response { response in
-            debugPrint(response)
-                var apiResult = ApiResult()
+                //debugPrint(response)
+                
                 do {
                     let data: [String: String] = try JSONSerialization.jsonObject(with: response.data!, options: []) as! [String : String]
                     

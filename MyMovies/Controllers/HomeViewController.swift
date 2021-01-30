@@ -106,3 +106,4 @@ extension HomeViewController: UISearchBarDelegate {
         performSegue(withIdentifier: Config.homeToSearch, sender: self)
     }
 }
+
